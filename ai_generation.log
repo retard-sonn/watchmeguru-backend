@@ -1,0 +1,1533 @@
+\n==================================================\nTIMESTAMP: 2026-05-25T14:06:46.455058\nPROMPT:\nYou are an expert study planner AI. Build a personalised 7-day study schedule.
+
+Student details:
+- Target exam: JEE
+- Subjects to cover (prioritise these): Physics
+- Student's preferences: "Keep Sunday as rest"
+
+CRITICAL RULES you MUST follow:
+1. STRICTLY honour every preference the student wrote. If they say "Sunday rest", isRest MUST be true and totalHours MUST be 0.
+2. Weight weak subjects more heavily (more hours, more days).
+3. If "morning" is mentioned, set startTime to "6:00 AM".
+4. totalHours must equal the exact sum of all block hours.
+5. Use these subject colors: {"Physics": "#0F2167"}
+6. Support block colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+
+Return ONLY valid JSON — no markdown fences, no explanation, nothing else. Exact structure:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Organic Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "9:00 AM"},
+        {"label": "Previous Year Papers", "hours": 1, "color": "#E8A000", "startTime": "11:00 AM"},
+        {"label": "Revision + Notes", "hours": 1, "color": "#6B7280", "startTime": "12:00 PM"}
+      ]
+    },
+    ... (all 7 days, Mon through Sun)
+  ]
+}\n\nRAW AI RESPONSE:\n```json
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Organic Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "9:00 AM"},
+        {"label": "Previous Year Papers", "hours": 1, "color": "#E8A000", "startTime": "11:00 AM"},
+        {"label": "Revision + Notes", "hours": 1, "color": "#6B7280", "startTime": "12:00 PM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Mathematics", "hours": 3, "color": "#2E8B57", "startTime": "9:00 AM"},
+        {"label": "Flash Cards", "hours": 1, "color": "#8B5CF6", "startTime": "12:00 PM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Inorganic Chemistry", "hours": 2, "color": "#FF8C00", "startTime": "9:00 AM"},
+        {"label": "Previous Year Papers", "hours": 1, "color": "#E8A000", "startTime": "11:00 AM"},
+        {"label": "Revision + Notes", "hours": 1, "color": "#6B7280", "startTime": "12:00 PM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Mathematics", "hours": 3, "color": "#2E8B57", "startTime": "9:00 AM"},
+        {"label": "Flash Cards", "hours": 1, "color": "#8B5CF6", "startTime": "12:00 PM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 2, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Physical Chemistry", "hours": 2, "color": "#8A2BE2", "startTime": "8:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 2, "color": "#DC2626", "startTime": "10:00 AM"},
+        {"label": "Revision + Notes", "hours": 1, "color": "#6B7280", "startTime": "12:00 PM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Mathematics", "hours": 2, "color": "#2E8B57", "startTime": "6:00 AM"},
+        {"label": "Physics", "hours": 2, "color": "#0F2167", "startTime": "8:00 AM"},
+        {"label": "Previous Year Papers", "hours": 1, "color": "#E8A000", "startTime": "10:00 AM"},
+        {"label": "Flash Cards", "hours": 1, "color": "#8B5CF6", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}
+```\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-25T14:11:00.305475\nPROMPT:\nYou are an expert study planner AI. Build a personalised 7-day study schedule.
+
+Student details:
+- Target exam: JEE
+- Subjects to cover (prioritise these): Physics, Computer
+- Student's preferences: "Keep Sunday as rest"
+
+CRITICAL RULES you MUST follow:
+1. STRICTLY honour every preference the student wrote. If they say "Sunday rest", isRest MUST be true and totalHours MUST be 0.
+2. Weight weak subjects more heavily (more hours, more days).
+3. If "morning" is mentioned, set startTime to "6:00 AM".
+4. totalHours must equal the exact sum of all block hours.
+5. Use these subject colors: {"Physics": "#0F2167", "Computer": "#1A3A8F"}
+6. Support block colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+
+Return ONLY valid JSON — no markdown fences, no explanation, nothing else. Exact structure:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Organic Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "9:00 AM"},
+        {"label": "Previous Year Papers", "hours": 1, "color": "#E8A000", "startTime": "11:00 AM"},
+        {"label": "Revision + Notes", "hours": 1, "color": "#6B7280", "startTime": "12:00 PM"}
+      ]
+    },
+    ... (all 7 days, Mon through Sun)
+  ]
+}\n\nRAW AI RESPONSE:\n```json
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {
+          "label": "Physics",
+          "hours": 3,
+          "color": "#0F2167",
+          "startTime": "6:00 AM"
+        },
+        {
+          "label": "Computer",
+          "hours": 2,
+          "color": "#1A3A8F",
+          "startTime": "9:00 AM"
+        },
+        {
+          "label": "Mathematics",
+          "hours": 1,
+          "color": "#0A2360",
+          "startTime": "11:00 AM"
+        },
+        {
+          "label": "Revision + Notes",
+          "hours": 1,
+          "color": "#6B7280",
+          "startTime": "12:00 PM"
+        }
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {
+          "label": "Computer",
+          "hours": 3,
+          "color": "#1A3A8F",
+          "startTime": "6:00 AM"
+        },
+        {
+          "label": "Physics",
+          "hours": 2,
+          "color": "#0F2167",
+          "startTime": "9:00 AM"
+        },
+        {
+          "label": "Chemistry",
+          "hours": 1,
+          "color": "#0F3D9A",
+          "startTime": "11:00 AM"
+        },
+        {
+          "label": "Previous Year Papers",
+          "hours": 1,
+          "color": "#E8A000",
+          "startTime": "12:00 PM"
+        }
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {
+          "label": "Physics",
+          "hours": 3,
+          "color": "#0F2167",
+          "startTime": "6:00 AM"
+        },
+        {
+          "label": "Computer",
+          "hours": 2,
+          "color": "#1A3A8F",
+          "startTime": "9:00 AM"
+        },
+        {
+          "label": "Mathematics",
+          "hours": 1,
+          "color": "#0A2360",
+          "startTime": "11:00 AM"
+        },
+        {
+          "label": "Flash Cards",
+          "hours": 1,
+          "color": "#8B5CF6",
+          "startTime": "12:00 PM"
+        }
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {
+          "label": "Computer",
+          "hours": 3,
+          "color": "#1A3A8F",
+          "startTime": "6:00 AM"
+        },
+        {
+          "label": "Physics",
+          "hours": 2,
+          "color": "#0F2167",
+          "startTime": "9:00 AM"
+        },
+        {
+          "label": "Chemistry",
+          "hours": 1,
+          "color": "#0F3D9A",
+          "startTime": "11:00 AM"
+        },
+        {
+          "label": "Revision + Notes",
+          "hours": 1,
+          "color": "#6B7280",
+          "startTime": "12:00 PM"
+        }
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 7,
+      "blocks": [
+        {
+          "label": "Physics",
+          "hours": 2,
+          "color": "#0F2167",
+          "startTime": "6:00 AM"
+        },
+        {
+          "label": "Computer",
+          "hours": 2,
+          "color": "#1A3A8F",
+          "startTime": "8:00 AM"
+        },
+        {
+          "label": "Mathematics",
+          "hours": 2,
+          "color": "#0A2360",
+          "startTime": "10:00 AM"
+        },
+        {
+          "label": "Previous Year Papers",
+          "hours": 1,
+          "color": "#E8A000",
+          "startTime": "12:00 PM"
+        }
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {
+          "label": "Mock Test (JEE Format)",
+          "hours": 3,
+          "color": "#DC2626",
+          "startTime": "6:00 AM"
+        },
+        {
+          "label": "Mock Test Analysis",
+          "hours": 2,
+          "color": "#DC2626",
+          "startTime": "9:00 AM"
+        },
+        {
+          "label": "Flash Cards",
+          "hours": 1,
+          "color": "#8B5CF6",
+          "startTime": "11:00 AM"
+        }
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}
+```\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-25T14:43:57.742384\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an advanced, deterministic Study Planner AI operating as a strict Constraint Satisfaction Problem (CSP) solver. Your sole function is to generate a personalized 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement and Zero-Shot Rule Evaluation. Do not deviate from the explicit parameters provided by the user.
+
+STUDENT INPUT CONTEXT
+- Target exam: JEE
+- Exclusive Subjects to Cover: Physics, Chemistry
+- Student's preferences: "I study best in the mornings. Keep Sunday as rest"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO HALLUCINATION): You are strictly forbidden from adding ANY subject, topic, or module that is not explicitly listed in the "Exclusive Subjects to Cover" array. Even if the "Target exam" typically requires other subjects, you must ONLY schedule blocks for the exact subjects provided.
+2. PREFERENCE ENFORCEMENT: You must strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+3. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM".
+4. MATHEMATICAL INTEGRITY: The `"totalHours"` integer at the daily root level MUST be the exact mathematical sum of the `"hours"` integers inside that day's `"blocks"` array.
+5. COLOR MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Physics": "#0F2167", "Chemistry": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+- If you generate a block label, you must assign the exact hex code provided.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 2, "color": "#E8A000", "startTime": "9:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "8:00 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "8:00 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 2, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "8:00 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-25T14:50:37.955932\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an advanced, deterministic Study Planner AI operating as a strict Constraint Satisfaction Problem (CSP) solver. Your sole function is to generate a highly effective, personalized 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement and Zero-Shot Rule Evaluation.
+
+STUDENT INPUT CONTEXT
+- Target exam: JEE
+- Exclusive Subjects to Cover: Chemistry, Physics
+- Student's preferences: "I study best in the mornings. Keep Sunday as rest"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): For core academic learning, you are strictly forbidden from adding ANY subject that is not explicitly listed in the "Exclusive Subjects to Cover" array. You must ONLY schedule core subject blocks for the exact subjects provided.
+2. ELITE STUDY METHODOLOGY (REQUIRED SUPPORT BLOCKS): To create a highly effective schedule, you MUST interleave core subject learning with active recall and testing. You are strictly permitted and expected to use the following support modules: ["Previous Year Papers", "Revision + Notes", "Mock Test Analysis", "Flash Cards"]. Distribute these logically throughout the week.
+3. PREFERENCE ENFORCEMENT: You must strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM".
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` integer at the daily root level MUST be the exact mathematical sum of the `"hours"` integers inside that day's `"blocks"` array.
+6. COLOR MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Chemistry": "#0F2167", "Physics": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 2, "color": "#E8A000", "startTime": "9:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 3, "color": "#E8A000", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 3, "color": "#6B7280", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 3, "color": "#DC2626", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 3, "color": "#8B5CF6", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 3, "color": "#E8A000", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 3, "color": "#6B7280", "startTime": "9:00 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-25T15:02:34.447852\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: School Exam
+- Exclusive Subjects to Cover: Chemistry, Computer
+- Student's preferences: "I study best in the mornings. Lighter schedule on weekends"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Chemistry": "#0F2167", "Computer": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:45 AM"},
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 1.5, "color": "#DC2626", "startTime": "8:45 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#0F2167", "startTime": "10:30 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:00 AM"},
+        {"label": "Previous Year Papers", "hours": 2, "color": "#E8A000", "startTime": "8:45 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-25T15:03:07.445205\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: School Exam
+- Exclusive Subjects to Cover: Chemistry, Computer
+- Student's preferences: "I study best in the mornings. Lighter schedule on weekends. Keep Sunday as rest. Lighter schedule on weekends"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Chemistry": "#0F2167", "Computer": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:45 AM"},
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 1.5, "color": "#DC2626", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "8:45 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#0F2167", "startTime": "10:15 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 2, "color": "#E8A000", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 1.5, "color": "#1A3A8F", "startTime": "11:45 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:15 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#0F2167", "startTime": "8:45 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-25T15:03:23.369865\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: School Exam
+- Exclusive Subjects to Cover: Chemistry, Computer
+- Student's preferences: "I study best in the mornings. Lighter schedule on weekends. Keep Sunday as rest. Lighter schedule on weekends. add computer in sunday for 1 hour"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Chemistry": "#0F2167", "Computer": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Chemistry", "hours": 2.5, "color": "#0F2167", "startTime": "8:45 AM"},
+        {"label": "Flash Cards", "hours": 1, "color": "#8B5CF6", "startTime": "11:30 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Chemistry", "hours": 2.5, "color": "#0F2167", "startTime": "8:45 AM"},
+        {"label": "Flash Cards", "hours": 1, "color": "#8B5CF6", "startTime": "11:30 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Chemistry", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Chemistry", "hours": 2, "color": "#0F2167", "startTime": "8:15 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "10:15 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 1,
+      "blocks": [
+        {"label": "Computer", "hours": 1, "color": "#1A3A8F", "startTime": "6:00 AM"}
+      ]
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-27T06:10:55.903211\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: School Exam
+- Exclusive Subjects to Cover: Physics, Computer
+- Student's preferences: "I study best in the mornings"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Physics": "#0F2167", "Computer": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:45 AM"},
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 1.5, "color": "#DC2626", "startTime": "8:45 AM"},
+        {"label": "Physics", "hours": 2, "color": "#0F2167", "startTime": "10:30 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 6.0,
+      "blocks": [
+        {"label": "Previous Year Papers", "hours": 2.5, "color": "#E8A000", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:45 AM"},
+        {"label": "Computer", "hours": 3, "color": "#1A3A8F", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-27T06:11:16.521282\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: School Exam
+- Exclusive Subjects to Cover: Physics, Computer
+- Student's preferences: "I study best in the mornings. i cant study 6 hrs everyday"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Physics": "#0F2167", "Computer": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 5.5,
+      "blocks": [
+        {"label": "Physics", "hours": 2.5, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:45 AM"},
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 5.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.0, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:15 AM"},
+        {"label": "Physics", "hours": 2.0, "color": "#0F2167", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 5.5,
+      "blocks": [
+        {"label": "Physics", "hours": 2.5, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 1.5, "color": "#DC2626", "startTime": "8:45 AM"},
+        {"label": "Computer", "hours": 1.5, "color": "#1A3A8F", "startTime": "10:15 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 5.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.0, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:15 AM"},
+        {"label": "Physics", "hours": 2.5, "color": "#0F2167", "startTime": "8:45 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 5.5,
+      "blocks": [
+        {"label": "Physics", "hours": 2.5, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:45 AM"},
+        {"label": "Computer", "hours": 2.0, "color": "#1A3A8F", "startTime": "9:45 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 5.0,
+      "blocks": [
+        {"label": "Computer", "hours": 2.0, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 2.0, "color": "#E8A000", "startTime": "8:15 AM"},
+        {"label": "Flash Cards", "hours": 1.0, "color": "#8B5CF6", "startTime": "10:15 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-27T06:11:29.347286\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: School Exam
+- Exclusive Subjects to Cover: Physics, Computer
+- Student's preferences: "I study best in the mornings. i cant study 6 hrs everyday. make it to 2 hr in friday"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Physics": "#0F2167", "Computer": "#1A3A8F"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "11:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 5.5,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:45 AM"},
+        {"label": "Physics", "hours": 2.5, "color": "#0F2167", "startTime": "9:15 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Computer", "hours": 2, "color": "#1A3A8F", "startTime": "10:15 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 6,
+      "blocks": [
+        {"label": "Computer", "hours": 2.5, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Mock Test Analysis", "hours": 1.5, "color": "#DC2626", "startTime": "8:45 AM"},
+        {"label": "Physics", "hours": 2, "color": "#0F2167", "startTime": "10:15 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 2,
+      "blocks": [
+        {"label": "Computer", "hours": 1, "color": "#1A3A8F", "startTime": "6:00 AM"},
+        {"label": "Physics", "hours": 1, "color": "#0F2167", "startTime": "7:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Physics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Previous Year Papers", "hours": 2, "color": "#E8A000", "startTime": "9:15 AM"},
+        {"label": "Flash Cards", "hours": 1.5, "color": "#8B5CF6", "startTime": "11:15 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-28T21:00:57.275124\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: UPSC CSE
+- Exclusive Subjects to Cover: Economics
+- Student's preferences: "I study only for 45 mins."
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Economics": "#0F2167"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Economics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Economics", "hours": 2, "color": "#0F2167", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Economics", "hours": 2.0, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:30 AM"},
+        {"label": "Economics", "hours": 1.0, "color": "#0F2167", "startTime": "9:45 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Economics", "hours": 2.0, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "9:00 AM"},
+        {"label": "Economics", "hours": 1.0, "color": "#0F2167", "startTime": "9:30 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Economics", "hours": 2.0, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:30 AM"},
+        {"label": "Economics", "hours": 1.0, "color": "#0F2167", "startTime": "9:45 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Economics", "hours": 2.0, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "9:00 AM"},
+        {"label": "Economics", "hours": 1.0, "color": "#0F2167", "startTime": "9:30 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Economics", "hours": 2.0, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "8:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:30 AM"},
+        {"label": "Economics", "hours": 1.0, "color": "#0F2167", "startTime": "9:45 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 4.5,
+      "blocks": [
+        {"label": "Economics", "hours": 2.0, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.0, "color": "#6B7280", "startTime": "8:00 AM"},
+        {"label": "Flash Cards", "hours": 0.5, "color": "#8B5CF6", "startTime": "9:00 AM"},
+        {"label": "Economics", "hours": 1.0, "color": "#0F2167", "startTime": "9:30 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n\n==================================================\nTIMESTAMP: 2026-05-28T21:01:22.705442\nMODEL USED: llama-3.3-70b-versatile (Groq)\nPROMPT:\nSYSTEM ROLE & METHODOLOGY
+You are an Elite Academic Strategist and a strict Constraint Satisfaction Problem (CSP) solver. Your function is to generate a highly effective, realistic 7-day study schedule in perfect JSON format. You must apply strict Schema Enforcement, Zero-Shot Rule Evaluation, and Evidence-Based Pedagogical Timeboxing.
+
+STUDENT INPUT CONTEXT
+- Target exam: UPSC CSE
+- Exclusive Subjects to Cover: Economics
+- Student's preferences: "I study only for 45 mins.. 45 minutes per day only"
+
+CRITICAL EXECUTION CONSTRAINTS (HARD RULES):
+1. DOMAIN ISOLATION (ZERO SUBJECT HALLUCINATION): You are strictly forbidden from adding ANY core academic subject that is not explicitly listed in the "Exclusive Subjects to Cover" array.
+2. PEDAGOGICAL TIMEBOXING (CRITICAL): You must allocate realistic time durations based on the cognitive load of the task:
+- Core Subjects (Physics, Chemistry, etc.): 2.0 to 3.0 hours per block (Deep Work).
+- "Flash Cards": STRICTLY 0.5 to 1.0 hour maximum per day (Spaced Repetition).
+- "Revision + Notes": 1.0 to 1.5 hours maximum.
+- "Mock Test Analysis": 1.5 to 2.0 hours.
+- "Previous Year Papers": 2.0 to 3.0 hours.
+Never schedule 3 hours of Flash Cards or Revision. Interleave short active recall sessions with longer deep work sessions.
+3. PREFERENCE ENFORCEMENT: Strictly honor the user's free-text preferences. If a specific day is marked for rest (e.g., "Sunday rest"), the node for that day MUST reflect `"isRest": true`, `"totalHours": 0`, and the `"blocks"` array MUST be completely empty `[]`.
+4. TIME INJECTION: If a specific time of day (e.g., "morning") is mentioned in the preferences, anchor the first `"startTime"` of the day to "6:00 AM". Allow logical 15-30 minute breaks between blocks (e.g., if Block 1 is 6:00 AM - 9:00 AM, Block 2 can start at 9:15 AM).
+5. MATHEMATICAL INTEGRITY: The `"totalHours"` number at the daily root level MUST be the exact mathematical sum of the `"hours"` values inside that day's `"blocks"` array. (You may use decimal values like 1.5 for hours).
+6. COLOR & LABEL MAPPING (EXACT MATCH ONLY):
+- Core Subject Colors: {"Economics": "#0F2167"}
+- Support Block Colors: {"Previous Year Papers": "#E8A000", "Revision + Notes": "#6B7280", "Mock Test Analysis": "#DC2626", "Flash Cards": "#8B5CF6"}
+Every block label generated must perfectly match a key in these dictionaries, and you must assign the exact corresponding hex code.
+
+OUTPUT FORMATTING INSTRUCTIONS:
+Return ONLY valid, parseable JSON.
+Do NOT wrap the output in markdown codeblocks (no `json ... `).
+Do NOT include any conversational text, reasoning, explanations, or formatting outside of the raw JSON object.
+
+REQUIRED JSON SCHEMA:
+{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 6.5,
+      "blocks": [
+        {"label": "Economics", "hours": 3, "color": "#0F2167", "startTime": "6:00 AM"},
+        {"label": "Revision + Notes", "hours": 1.5, "color": "#6B7280", "startTime": "9:15 AM"},
+        {"label": "Economics", "hours": 2, "color": "#0F2167", "startTime": "11:00 AM"}
+      ]
+    }
+  ]
+}
+Ensure the array contains exact structures for all 7 days, Mon through Sun, following all constraints.\n\nRAW AI RESPONSE:\n{
+  "schedule": [
+    {
+      "day": "Mon",
+      "fullDay": "Monday",
+      "isRest": false,
+      "totalHours": 0.75,
+      "blocks": [
+        {"label": "Economics", "hours": 0.75, "color": "#0F2167", "startTime": "6:00 AM"}
+      ]
+    },
+    {
+      "day": "Tue",
+      "fullDay": "Tuesday",
+      "isRest": false,
+      "totalHours": 0.75,
+      "blocks": [
+        {"label": "Economics", "hours": 0.75, "color": "#0F2167", "startTime": "6:00 AM"}
+      ]
+    },
+    {
+      "day": "Wed",
+      "fullDay": "Wednesday",
+      "isRest": false,
+      "totalHours": 0.75,
+      "blocks": [
+        {"label": "Economics", "hours": 0.75, "color": "#0F2167", "startTime": "6:00 AM"}
+      ]
+    },
+    {
+      "day": "Thu",
+      "fullDay": "Thursday",
+      "isRest": false,
+      "totalHours": 0.75,
+      "blocks": [
+        {"label": "Economics", "hours": 0.75, "color": "#0F2167", "startTime": "6:00 AM"}
+      ]
+    },
+    {
+      "day": "Fri",
+      "fullDay": "Friday",
+      "isRest": false,
+      "totalHours": 0.75,
+      "blocks": [
+        {"label": "Economics", "hours": 0.75, "color": "#0F2167", "startTime": "6:00 AM"}
+      ]
+    },
+    {
+      "day": "Sat",
+      "fullDay": "Saturday",
+      "isRest": false,
+      "totalHours": 0.75,
+      "blocks": [
+        {"label": "Economics", "hours": 0.75, "color": "#0F2167", "startTime": "6:00 AM"}
+      ]
+    },
+    {
+      "day": "Sun",
+      "fullDay": "Sunday",
+      "isRest": true,
+      "totalHours": 0,
+      "blocks": []
+    }
+  ]
+}\n==================================================\n
