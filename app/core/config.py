@@ -29,6 +29,9 @@ class Settings(BaseSettings):
     twilio_auth_token: str = ""
     twilio_whatsapp_number: str = ""
 
+    # Resend (Email)
+    resend_api_key: str = ""
+
     # Legacy WhatsApp (Meta direct — kept for compat)
     whatsapp_token: str = ""
     whatsapp_phone_number_id: str = ""

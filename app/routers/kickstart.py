@@ -224,7 +224,27 @@ async def complete_task(request: Request, task_id: str):
             "study_hours": new_study_hours,
             "last_active_at": datetime.now(timezone.utc).isoformat(),
         }, {"id": student_id})
-        return {"success": True, "task_id": task_id}
+
+        # Send WhatsApp: session completed + ask for proof photo + quiz
+        student_whatsapp = student.get("whatsapp_number")
+        subject = task.get("subject") or task.get("title", "Study")
+        if student_whatsapp:
+            session_complete_msg = (
+                f"✅ *Session Complete — {subject}*\n\n"
+                f"Great job, {student_name}! You finished your {subject} session ({hours}h).\n\n"
+                f"📸 *Next Step: Proof Upload*\n"
+                f"Send a *photo of your notes or solved problems* from this session. "
+                f"I'll analyze your work and generate a *10-question quiz* to test your understanding.\n\n"
+                f"⚠️ The quiz is *mandatory* — your session won't count until you complete it.\n\n"
+                f"Reply with your photo now! 📲"
+            )
+            try:
+                await send_whatsapp(student_whatsapp, session_complete_msg)
+                logger.info(f"Session complete WhatsApp sent to {student_whatsapp}")
+            except Exception as e:
+                logger.error(f"Failed to send completion WhatsApp: {e}")
+
+        return {"success": True, "task_id": task_id, "quiz_required": True, "subject": subject}
     except Exception as e:
         logger.error(f"Failed to complete task {task_id}: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Something went wrong. Please try again.")

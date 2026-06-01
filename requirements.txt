@@ -3,7 +3,6 @@ uvicorn[standard]
 pydantic
 pydantic-settings
 httpx
-google-generativeai
 google-genai
 apscheduler
 python-dotenv
@@ -14,3 +13,4 @@ langgraph
 langchain-groq
 langchain-core
 instructor
+resend

@@ -10,6 +10,7 @@ from app.core.supabase_client import sb_select, sb_update, sb_insert
 from app.core.config import get_settings
 import logging
 import secrets
+import json
 
 router = APIRouter(tags=["Students"])
 logger = logging.getLogger(__name__)
@@ -93,7 +94,7 @@ async def get_my_profile(request: Request):
         }
     except Exception as e:
         logger.error(f"Error fetching profile: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Something went wrong. Please try again.")
 
 
 @router.get("/me/schedule/today")
@@ -110,6 +111,12 @@ async def get_today_schedule(request: Request):
         daily_schedule = s.get("daily_schedule")
         if not daily_schedule:
             return {"today": None, "blocks": [], "message": "No schedule yet. Generate one in Setup."}
+
+        # Defensive: handle JSON strings (if DB returns text instead of jsonb)
+        if isinstance(daily_schedule, str):
+            import json as _json
+            try: daily_schedule = _json.loads(daily_schedule)
+            except: return {"today": None, "blocks": [], "message": "Schedule data is corrupted. Please regenerate."}
 
         schedule = daily_schedule if isinstance(daily_schedule, list) else daily_schedule.get("schedule", [])
         today_short = get_today_short()
@@ -257,7 +264,7 @@ async def update_integrations(request: Request, payload: IntegrationsPayload):
         raise
     except Exception as e:
         logger.error(f"Failed to update integrations: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=500, detail="Something went wrong. Please try again.")
 
 
 # ─── Parent OTP Unlock ──────────────────────────────────────────

@@ -153,17 +153,31 @@ Ensure the array contains exact structures for all 7 days, Mon through Sun, foll
         client = _get_client()
         response = client.models.generate_content(model=WORKING_MODEL, contents=prompt)
         text = response.text.strip()
-    
-    # Log the full request and response for transparency
+
+    # Log with rotation (max 5MB, keep 3 backups)
     log_file = "ai_generation.log"
     try:
+        # Auto-rotate if file exceeds 5MB
+        import os as _os
+        max_bytes = 5 * 1024 * 1024  # 5MB
+        if _os.path.exists(log_file) and _os.path.getsize(log_file) > max_bytes:
+            for i in range(2, 0, -1):
+                old = f"{log_file}.{i}"
+                new = f"{log_file}.{i + 1}" if i < 3 else None
+                if _os.path.exists(old):
+                    if i == 2:
+                        _os.remove(old)
+                    else:
+                        _os.rename(old, f"{log_file}.{i + 1}")
+            _os.rename(log_file, f"{log_file}.1")
+
         with open(log_file, "a", encoding="utf-8") as f:
-            f.write(f"\\n{'='*50}\\n")
-            f.write(f"TIMESTAMP: {datetime.datetime.now().isoformat()}\\n")
-            f.write(f"MODEL USED: {model_used}\\n")
-            f.write(f"PROMPT:\\n{prompt}\\n\\n")
-            f.write(f"RAW AI RESPONSE:\\n{text}\\n")
-            f.write(f"{'='*50}\\n")
+            f.write(f"\n{'='*50}\n")
+            f.write(f"TIMESTAMP: {datetime.datetime.now().isoformat()}\n")
+            f.write(f"MODEL USED: {model_used}\n")
+            f.write(f"PROMPT LENGTH: {len(prompt)} chars\n")
+            f.write(f"RESPONSE LENGTH: {len(text)} chars\n")
+            f.write(f"{'='*50}\n")
     except Exception as e:
         logger.warning(f"Failed to write to AI log file: {e}")
 
