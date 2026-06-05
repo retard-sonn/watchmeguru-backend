@@ -15,3 +15,4 @@ langchain-core==0.3.30
 instructor==1.8.3
 resend==2.10.0
 cryptography==44.0.3
+python-multipart==0.0.9
