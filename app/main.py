@@ -99,6 +99,18 @@ except Exception as e:
     print(f"Dashboard router not loaded: {e}")
 
 try:
+    from app.routers import audit
+    app.include_router(audit.router, prefix="/api/v1/audit", tags=["Audit"])
+except Exception as e:
+    print(f"Audit router not loaded: {e}")
+
+try:
+    from app.routers import verify
+    app.include_router(verify.router, prefix="/api/v1", tags=["Verify"])
+except Exception as e:
+    print(f"Verify router not loaded: {e}")
+
+try:
     from app.routers import leaderboard
     app.include_router(leaderboard.router, prefix="/api/v1/leaderboard", tags=["Leaderboard"])
 except Exception as e:
