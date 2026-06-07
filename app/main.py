@@ -44,6 +44,8 @@ ALLOWED_ORIGINS = [
     "https://watchmeguru.io",
     "https://www.watchmeguru.io",
     "https://watchmeguru-frontend.vercel.app",
+    "https://watchmeguru.in",
+    "https://www.watchmeguru.in",
     # Allow all Vercel preview deploy URLs for this project
     "https://watchmeguru-frontend-*.vercel.app",
 ]
