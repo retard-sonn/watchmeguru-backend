@@ -28,6 +28,7 @@ PUBLIC_PATHS = [
     "/openapi.json",
     "/redoc",
     "/api/v1/webhooks",
+    "/api/v1/cron",
 ]
 
 

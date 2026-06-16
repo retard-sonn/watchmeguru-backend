@@ -73,7 +73,7 @@ def build_welcome_email(student_name: str, exam_type: str, mode: str) -> str:
   <p style="color:#6B5D52;font-size:14px;line-height:1.6">
     <strong>Your dashboard is live:</strong> track streaks, earn XP, grow your learning tree, and unlock achievements.
   </p>
-  <a href="https://watchmeguru.io/dashboard" style="display:inline-block;background:linear-gradient(135deg,#58CC02,#46A302);color:#fff;text-decoration:none;padding:14px 32px;border-radius:14px;font-weight:700;font-size:15px;margin-top:16px">
+  <a href="https://watchmeguru.com/dashboard" style="display:inline-block;background:linear-gradient(135deg,#58CC02,#46A302);color:#fff;text-decoration:none;padding:14px 32px;border-radius:14px;font-weight:700;font-size:15px;margin-top:16px">
     Open Dashboard →
   </a>
   <p style="color:#9B8E84;font-size:12px;margin:32px 0 0">

@@ -32,8 +32,8 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="WatchMeGuru.io API",
-    description="Backend API for WatchMeGuru.io — proactive mentorship across WhatsApp, Telegram & Discord",
+    title="WatchMeGuru API",
+    description="Backend API for WatchMeGuru — proactive mentorship across WhatsApp, Telegram & Discord",
     version="1.0.0",
     lifespan=lifespan,
 )
@@ -41,8 +41,8 @@ app = FastAPI(
 # CORS — allow all our frontends (localhost dev + Vercel preview + production)
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://watchmeguru.io",
-    "https://www.watchmeguru.io",
+    "https://watchmeguru.com",
+    "https://www.watchmeguru.com",
     "https://watchmeguru-frontend.vercel.app",
     "https://watchmeguru.in",
     "https://www.watchmeguru.in",
@@ -86,6 +86,12 @@ app.include_router(students.router, prefix="/api/v1/students", tags=["Students"]
 app.include_router(onboarding.router, prefix="/api/v1/onboarding", tags=["Onboarding"])
 app.include_router(ai.router, prefix="/api/v1/ai", tags=["AI"])
 app.include_router(kickstart.router, prefix="/api/v1", tags=["Kickstart"])
+
+try:
+    from app.routers import cron
+    app.include_router(cron.router, prefix="/api/v1/cron", tags=["Cron"])
+except Exception as e:
+    print(f"Cron router not loaded: {e}")
 
 # Optional routers — import defensively so missing deps don't crash Vercel
 try:

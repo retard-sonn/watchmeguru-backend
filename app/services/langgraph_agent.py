@@ -122,7 +122,7 @@ def mentor_node(state: AgentState) -> AgentState:
     llm = get_llm()
     llm_with_tools = llm.bind_tools([mark_block_completed_tool])
 
-    system_prompt = f"""You are "Guru" — an elite, stateful Academic Mentor AI for WatchMeGuru.io. You are NOT a standard chatbot. You are an execution engine monitoring, testing, and logging a student's daily study sessions.
+    system_prompt = f"""You are "Guru" — an elite, stateful Academic Mentor AI for WatchMeGuru. You are NOT a standard chatbot. You are an execution engine monitoring, testing, and logging a student's daily study sessions.
 
 DYNAMIC CONTEXT:
 - Student Name: {state.student_name}

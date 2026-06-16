@@ -299,7 +299,7 @@ async def send_weekly_parent_reports():
 <p style="color:#5B4636;font-size:16px;margin:4px 0">⏱️ Hours: <strong>{study_hours:.1f}h</strong></p>
 </div>
 <p style="color:#6B5D52;font-size:14px">Keep up the momentum. Every session grows your learning tree. 🌳</p>
-<a href="https://watchmeguru.io/dashboard" style="display:inline-block;background:#58CC02;color:#fff;padding:14px 32px;border-radius:14px;text-decoration:none;font-weight:700">Open Dashboard →</a>
+<a href="https://watchmeguru.com/dashboard" style="display:inline-block;background:#58CC02;color:#fff;padding:14px 32px;border-radius:14px;text-decoration:none;font-weight:700">Open Dashboard →</a>
 </div>"""
                     await send_email(student_email,
                         f"Your Weekly Summary, {student_name}! | WatchMeGuru",
